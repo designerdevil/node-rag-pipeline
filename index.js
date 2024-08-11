@@ -20,9 +20,11 @@ app.use(bodyParser.json());
 app.get('/get-context', async (req, res) => {
 	try {
 		const question = req.query.question;
-		const response = await retrieverHandler(question);
+		const fromWeb = req.query.fromWeb;
+		const response = await retrieverHandler(question, fromWeb);
 		res.send(response);
 	} catch (error) {
+		console.log(error);
 		res.send({ status: "FAILED", answer: "Ooops, I\'ve encountered an unexpected error. :)" });
 	}
 });

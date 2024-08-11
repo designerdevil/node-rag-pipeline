@@ -1,14 +1,14 @@
 // In progress
 
-import search from 'duck-duck-scrape';
+import {search} from 'duck-duck-scrape';
 
-const searchWebResults = async (query) => {
+const webSearch = async (query) => {
 	const searchInternet = await search(query, {
-		safeSearch: SafeSearchType.STRICT
+		safeSearch: 0
 	});
 
-	const searchResult = searchInternet.results[0]
+	const searchResult = searchInternet.results
 	return searchResult;
 };
 
-export default searchWebResults;
+export default webSearch;

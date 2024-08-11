@@ -26,7 +26,6 @@ const embedHandler = async () => {
 		});
 
 		const docs = await loader.load();
-
 		const textSplitter = new RecursiveCharacterTextSplitter({
 			chunkSize: 1000,
 		});
