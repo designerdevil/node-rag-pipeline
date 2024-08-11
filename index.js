@@ -3,14 +3,11 @@ import multer from 'multer';
 import fs from 'fs';
 import path from 'path';
 import bodyParser from 'body-parser';
-import { fileURLToPath } from 'url';
 import embedHandler from './util/embedHandler.js';
 import retrieverHandler from './util/retrievalHandler.js';
 
 const app = express();
 const port = 3001;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 app.use(bodyParser.json());
 

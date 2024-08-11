@@ -1,7 +1,7 @@
 import { FaissStore } from "@langchain/community/vectorstores/faiss";
 import embeddings from "./embeddings.js";
 
-const retrieverHandler = async (query, fromWeb=false) => {
+const retrieverHandler = async (query) => {
 	const vectorStore = await FaissStore.load(`./embeds`, embeddings);
 	const records = await vectorStore.similaritySearch(query);
 	
