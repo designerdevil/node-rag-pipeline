@@ -11,6 +11,14 @@ const port = 3001;
 
 app.use(bodyParser.json());
 
+app.get('/', async (req, res) => {
+	res.send({
+		route1: 'http://localhost:3001/upload',
+		route2: 'http://localhost:3001/embedding-document',
+		route3: 'http://localhost:3001/get-context',
+	});
+});
+
 /**
  * Define a GET route
  */
